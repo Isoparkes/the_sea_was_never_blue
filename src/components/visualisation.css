@@ -1,0 +1,17 @@
+/* src/App.css or src/components/visualisation.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.viz-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.axis-label {
+    font-weight: bold;
+}
