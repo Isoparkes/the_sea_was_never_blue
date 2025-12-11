@@ -1,17 +1,95 @@
 /* src/App.css or src/components/visualisation.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
-
 .viz-container {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'Martian Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f5f9;
+}
+
 .axis-label {
-    font-weight: bold;
+    font-family: 'Martian Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.tick text {
+    font-family: 'Martian Mono', monospace;
+    font-size: 11px;
+}
+
+@font-face {
+    font-family: 'Louize Display';
+    /* The URL starts from the public folder implicitly */
+    src: url('/fonts/LouizeDisplay.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.chart-title {
+    font-family: 'Louize Display', serif;
+    font-size: 24px;
+    fill: #333;
+}
+
+.App {
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: column; /* Stacks elements (Title on top of Chart) */
+    align-items: center; /* Centers items Horizontally */
+    justify-content: center; /* Centers items Vertically */
+    min-height: 100vh; /* IMPORTANT: Forces the container to be at least as tall as the screen */
+    text-align: center; /* Centers text inside the text elements themselves; */ 
+}
+
+.body-text {
+    text-align: left;
+    max-width: 1000px; 
+    width: 100%;
+    margin: 10px auto 30px auto; 
+    line-height: 1.6;
+    padding: 0 20px; /* Prevents text hitting edge on mobile phones */
+}
+
+.prism-container {
+    position: absolute;
+    background-color: #e6f5f9;
+    top: -110px;
+    right: 340px;
+    width: 0px;
+    height: 0px;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+.html-tooltip {
+    position: absolute;
+    width: auto;
+    min-width: 300px;
+    max-width: 320px;
+    height: auto;
+    padding: 14px;
+    
+    text-align: left;
+    background: white;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    /*  box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+    
+    /* Font styling */
+    font-family: 'Martian Mono', monospace;
+    font-size: 12px;
+    line-height: 1.5;
 }
