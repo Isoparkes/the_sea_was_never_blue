@@ -86,10 +86,44 @@ body {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-    z-index: 10;
+    z-index: 100;
     
     /* Font styling */
     font-family: 'Martian Mono', monospace;
     font-size: 12px;
     line-height: 1.5;
+}
+
+.scrolly-container {
+    position: relative;
+}
+
+.sticky-graphic {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.scrolly-scroll {
+    position: relative;
+    z-index: 1;
+    margin-top: -100vh; /* Pulls text up to overlap the sticky graph */
+    pointer-events: none; /* Allows hovering on graph dots behind the text layer */
+}
+
+.step-card {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 100vh auto; /* Spacing between text blocks */
+    pointer-events: auto; /* Re-enables text selection/interaction */
+    padding: 20px;
+}
+
+.step-ghost {
+    height: 60vh; /* Invisible spacer for the animation trigger */
 }
