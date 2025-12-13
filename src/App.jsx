@@ -13,14 +13,12 @@ function App() {
 
   const cardStyle = {
     background: 'rgba(255, 255, 255, 0.95)',
-    padding: '25px',
     border: '1px solid #1E3A5F',
     borderRadius: '4px',
-    textAlign: 'left', // Keeps paragraph text readable
-    display: 'inline-block', // Wraps the box tightly around text
-    maxWidth: '900px'
+    textAlign: 'left',
   };
 
+  // Louize Display, font size 18
   const steps = [
     {id: 0, content: (
       <div style={{textAlign: 'center' }}>

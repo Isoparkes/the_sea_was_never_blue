@@ -9,9 +9,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap');
 
 body {
-    font-family: 'Martian Mono', monospace;
-    margin: 0;
-    padding: 0;
     background-color: #e6f5f9;
 }
 
@@ -51,11 +48,10 @@ body {
 
 .body-text {
     text-align: left;
-    max-width: 1000px; 
-    width: 100%;
-    margin: 10px auto 30px auto; 
+    width: 94%;
+    margin: 30px auto 30px auto; 
     line-height: 1.6;
-    padding: 0 20px; /* Prevents text hitting edge on mobile phones */
+    padding: 0 30px; /* Prevents text hitting edge on mobile phones */
 }
 
 .prism-container {
@@ -119,11 +115,11 @@ body {
 .step-card {
     position: relative;
     max-width: 900px;
+    padding: '25px';
     margin: 0 auto 100vh auto; /* Spacing between text blocks */
     pointer-events: auto; /* Re-enables text selection/interaction */
-    padding: 20px;
 }
 
 .step-ghost {
-    height: 60vh; /* Invisible spacer for the animation trigger */
+    height: 100vh; /* Invisible spacer for the animation trigger */
 }
