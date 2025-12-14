@@ -27,7 +27,7 @@ function App() {
         </h1>
 
         <div style={cardStyle}>
-          <p className="body-text"style={{ fontFamily: 'Martian Mono', fontSize: '12px' }}>
+          <p className="body-text"style={{ fontFamily: 'Louize Display', fontSize: '18px' }}>
             The ancient Greek experience of colour was inseparable from motion and shimmer. 
             Colour was a basic unit of information which reflected the natural world – encoding brightness 
             and darkness as fundamental dimensions. Greek colour terms not only prioritised luminosity but the 
@@ -36,7 +36,7 @@ function App() {
             we use today.
           </p>
 
-          <p className="body-text" style={{ fontFamily: 'Martian Mono', fontSize: '12px' }}>
+          <p className="body-text" style={{ fontFamily: 'Louize Display', fontSize: '18px' }}>
             Blue is notably absent from the Greek colour vocabulary. Homer used two adjectives related to the colour blue: 
             <span style={{ color: '#1E3A5F' }}><strong><em> kuaneos</em></strong></span> for dark blue merging into black, 
             and <span style={{ color: '#6B9AA3' }}><strong><em>glaukos</em></strong></span> for a pale, glinting blue-grey 
@@ -52,8 +52,8 @@ function App() {
     )},
     {id: 1, content: (
       <div style={cardStyle}>
-        <p className="body-text" style={{ fontFamily: 'Martian Mono', fontSize: '12px' }}>
-          This visualisation explores the 'sensory' experience of ancient Greek colour perception, with a focus on the
+        <p className="body-text" style={{ fontFamily: 'Louize Display', fontSize: '18px' }}>
+          This visualisation explores the 'sensory' experience of ancient Greek colour perception, focusing on the
           major colour adjectives Homer uses in the <em>Iliad</em>.
           <br />
           <br />
@@ -69,7 +69,7 @@ function App() {
 
     {id: 3, content: (
       <div style={cardStyle}>
-        <p className="body-text" style={{ fontFamily: 'Martian Mono', fontSize: '12px' }}>
+        <p className="body-text" style={{ fontFamily: 'Louize Display', fontSize: '18px' }}>
           Ancient Greeks placed emphasis on the way colour could flicker and flash, the 'glitter effect'. 
           <span style={{ color: '#53285bff' }}><strong><em> Porphureous</em></strong></span> is a perfect example, a combination 
           of brightness caught in motion, impossible to grasp without imagining its glimmering edge. When the sea is called 
