@@ -1,32 +1,24 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import fullData from '../data/iliad_colour_data.json'; 
+import fullData from '../data/iliad_colour_data.json';
+import { HOMERIC_COLOURS } from '../data/constants.js';
 import './visualisation.css';
 
-const HOMERIC_COLOURS = {
-    'γλαυκός': '#6B9AA3', 'κυάνεος': '#1E3A5F','πορφυρεός': '#53285bff', 
-    'οἶνοψ': '#43171eff', 'φοῖνιξ': '#8B2F39', 'ἐρυθρός': '#B8302C', 
-    'ῥοδοδάκτυλος': '#E8A0A0', 'ξανθός': '#D4AF37', 'αἴθων': '#C85A28', 
-    'χλωρός': '#9CAF88', 'λευκός': '#FAFAFA', 'ἀργός': '#f4f4f4ff', 
-    'πολιός': '#c2c2c2ff','μέλας': '#1A1A1A'
-};
-
 const LABEL_OFFSETS = {
-    'χλωρός': { x: -5, y: -26 },  // otherwise χλωρός is overlapping with οἶνοψ
+    'χλωρός': { x: -6, y: -22 },
+    'πολιός': { x: -3, y: 0 },  // otherwise χλωρός is overlapping with οἶνοψ
 };
 
-const D3ScatterPlot = ({activeStep}) => {
+const D3ScatterPlot = ({activeStep, onTermHover, activeTerms, fadeDots}) => {
     const svgRef = useRef(null); 
     const tooltipRef = useRef(null); // html tooltip can float anywhere on the page, it is not constrained by the SVG container
-
-    const hasAnimated = useRef(false);
 
     useEffect(() => {
         const data = fullData.colour_scales;
 
-        const margin = { top: 40, right: 110, bottom: 90, left: 110 };
-        const width = 800 - margin.left - margin.right;
-        const height = 600 - margin.top - margin.bottom;
+        const margin = { top: 36, right: 100, bottom: 80, left: 100 };
+        const width = 720 - margin.left - margin.right;
+        const height = 540 - margin.top - margin.bottom;
 
         // clear previous render
         d3.select(svgRef.current).selectAll("*").remove();
@@ -92,7 +84,7 @@ const D3ScatterPlot = ({activeStep}) => {
         xAxisGroup.append("text")
             .attr("class", "axis-label")
             .attr("x", width / 2)
-            .attr("y", 65)
+            .attr("y", 58)
             .attr("fill", "#333")
             .style("text-anchor", "middle")
             .text("Gleam (shimmer & movement)");
@@ -125,68 +117,32 @@ const D3ScatterPlot = ({activeStep}) => {
         yAxisGroup.append("text")
             .attr("class", "axis-label")
             .attr("transform", "rotate(-90)")
-            .attr("y", -65)
+            .attr("y", -59)
             .attr("x", -height / 2)
             .attr("fill", "#333")
             .style("text-anchor", "middle")
             .text("Luminosity (brightness)");
-        
-        // SVG tooltip (this is clipped by the canvas margins)
-        // const tooltipGroup = svg.append("g")
-        //     .style("opacity", 0) // hide tooltip initially
-        //     .style("pointer-events", "none"); // prevent mouse interaction
-
-        // tooltipGroup.append("rect")
-        //     .attr("width", 300)
-        //     .attr("height", 120)
-        //     .attr("fill", "white")
-        //     .attr("stroke", "#000000ff") // border
-        //     .attr("x", 30) // offset tooltip
-        //     .attr("y", -10) // offset
-
-        // tooltipGroup.append("text")
-        //     .text("hello")
-        //     .attr("x", 55) // Center of the rect (30 + 50/2)
-        //     .attr("y", 4)  // Vertical center approximation
-        //     .style("text-anchor", "middle")
-        //     .style("font-size", "12px")
-        //     .style("fill", "black");
 
         // html tooltip
-        const tooltipDiv = d3.select(tooltipRef.current)
+        const tooltipDiv = d3.select(tooltipRef.current);
 
-        if (activeStep >= 2){
+        if (activeStep >= 0){
 
-            const shouldAnimate = !hasAnimated.current;
-
-            // animation and scatterplot points (dots)
-            const DOT_DELAY = 500;
-            const DOT_DURATION = 2000;
-
-            const tDots = d3.transition()
-                .duration(DOT_DURATION)
-                .delay(DOT_DELAY)
-                .ease(d3.easeExpOut);
-
+            // Render Dots Instantly
             svg.selectAll(".dot")
                 .data(data)
                 .join("circle")
                 .attr("class", "dot")
-                .attr("cx", width) // animation starts in the top right corner
-                .attr("cy", 0)     // ^^^
-                .attr("r", 0) 
+                .attr("cx", d => xScale(d.Unique_gleam_score)) 
+                .attr("cy", d => yScale(d.Luminosity_Score))     
+                .attr("r", 8) 
                 .style("fill", d => HOMERIC_COLOURS[d.Greek_Term] || "#ccc")
-                .style("opacity", 0.9)
+                .style("opacity", 1)
                 .style("cursor", "pointer")
-                // tooltip
+                // tooltip listeners
                 .on("mouseover", (event, d) => {
-                    // tooltipGroup.raise(); // when using SVG tooltips, this brings the tooltip in front of graph text
-                    // tooltipGroup
-                    //     .attr("transform", `translate(${xScale(d.Unique_gleam_score)}, ${yScale(d.Luminosity_Score)})`)
-                    //     .transition()
-                    //     .style("opacity", 1); // make tooltip visible
-
-                    const [x, y] = d3.pointer(event, svgRef.current); // gets the coordinates relative to the SVG container
+                    onTermHover?.(d.Transliteration); // hover callback
+                    const [x, y] = d3.pointer(event, svgRef.current); 
 
                     const isWhite = d.Greek_Term === 'ἀργός' || d.Greek_Term === 'λευκός';
                     const textColor = isWhite ? '#000000' : HOMERIC_COLOURS[d.Greek_Term];
@@ -194,101 +150,79 @@ const D3ScatterPlot = ({activeStep}) => {
                     tooltipDiv.html(`
                         <div style="font-size: 13px; font-weight: bold; margin-bottom: 4px; color: #000;">
                             <span>${d.Transliteration}</span>
-
-                            <span style="font-family: Georgia, serif; font-weight: regular; font-size: 15px; color: ${textColor};">
+                            <span style="font-family: Georgia, serif; font-weight: normal; font-size: 15px; color: ${textColor};">
                                 ${d.Greek_Term}
                             </span>
                         </div>
-
                         <div style="color: #666; font-style: italic;">
                             ${d.English}
                         </div>
-
                         <div style="margin-top: 5px; padding-top: 5px; font-size: 11px;">
                             ${d.Context}
                         </div>
                     `);
 
+                    const nearRight = x > (width + margin.left) * 0.95;
+
                     tooltipDiv
                         .style("opacity", 1)
-                        .style("left", (x + 30) + "px")
+                        .style("min-width", nearRight ? "160px" : "300px")
+                        .style("max-width", nearRight ? "180px" : "320px")
+                        .style("left", (x + 20) + "px")
                         .style("top", (y - 10) + "px");
                     
                     d3.select(event.currentTarget)
                         .transition().duration(200)
-                        .attr("r", 12)}) // enlarges scatterplot point
-                
-                .on("mouseout", (event, d) => {
-                    tooltipDiv.style("opacity", 0);
-
-                    d3.select(event.currentTarget)
-                        .transition().duration(200)
                         .attr("r", 10);
                 })
-
-                .call(enter => {
-                    if (shouldAnimate) {
-                        // First run: Fly in
-                        enter.transition(tDots)
-                            .attr("cx", d => xScale(d.Unique_gleam_score))
-                            .attr("cy", d => yScale(d.Luminosity_Score))
-                            .attr("r", 10);
-                    } else {
-                        // Subsequent runs (Step 3): Appear instantly (Fixed)
-                        enter.attr("cx", d => xScale(d.Unique_gleam_score))
-                             .attr("cy", d => yScale(d.Luminosity_Score))
-                             .attr("r", 10);
-                    }
+                .on("mouseout", (event, d) => {
+                    onTermHover?.(null); // hover callback reset
+                    tooltipDiv.style("opacity", 0);
+                    d3.select(event.currentTarget)
+                        .transition().duration(200)
+                        .attr("r", 8);
                 });
 
-                // END EVENT LISTENERS
-                // .call(enter => enter.transition(tDots)
-                //     .attr("cx", d => xScale(d.Unique_gleam_score))
-                //     .attr("cy", d => yScale(d.Luminosity_Score))
-                //     .attr("r", 10)
-                // ); 
-
-            // greek labels for scatterplot points
-            
-            // Delay = Dot Delay (500) + Dot Duration (2000) = 2500ms
-            const tLabels = d3.transition()
-                .duration(1000) // fade in takes 1 second
-                .delay(DOT_DELAY + DOT_DURATION) 
-                .ease(d3.easeLinear);
-
+            // Render Greek Labels Instantly
             svg.selectAll(".label")
                 .data(data)
                 .enter()
                 .append("text")
                 .attr("class", "label")
-                // Apply Manual X Offset
                 .attr("x", d => {
                     const offset = LABEL_OFFSETS[d.Greek_Term]?.x || 0;
                     return xScale(d.Unique_gleam_score) + 14 + offset;
                 })
-                // Apply Manual Y Offset
                 .attr("y", d => {
                     const offset = LABEL_OFFSETS[d.Greek_Term]?.y || 0;
-                    return yScale(d.Luminosity_Score) + 10 + offset; // Kept your +10 adjustment
+                    return yScale(d.Luminosity_Score) + 10 + offset;
                 })
                 .text(d => d.Greek_Term)
                 .style("font-size", "13px")
                 .style("font-family", "Georgia, serif")
                 .style("fill", "#333")
-                .style("opacity", shouldAnimate ? 0 : 1) 
-                .call(enter => {
-                    if (shouldAnimate) {
-                        enter.transition(tLabels).style("opacity", 1);
-                    }
-                });
-
-            hasAnimated.current = true;
-                // .style("opacity", 0) // Initially invisible
-                // .transition(tLabels) // Use the delayed tLabels transition
-                // .style("opacity", 1); // Fade to visible
-
+                .style("opacity", 1); 
         }
-    },[activeStep]);
+    }, [activeStep]);
+
+    // ── Effect 2: respond to reference dropdown selection — dim dots not in the selected reference's palette ───────
+    useEffect(() => {
+        const svg = d3.select(svgRef.current);
+        const terms = activeTerms || new Set();
+        if (!fadeDots) {
+            // Reset all dots and labels to full opacity
+            svg.selectAll('.dot').transition().duration(300).style('opacity', 1);
+            svg.selectAll('.label').transition().duration(300).style('opacity', 1);
+        } else {
+            // Fade out dots and labels that aren't part of the selected reference's palette
+            svg.selectAll('.dot')
+                .transition().duration(300)
+                .style('opacity', d => terms.has(d.Transliteration) ? 1 : 0.08);
+            svg.selectAll('.label')
+                .transition().duration(300)
+                .style('opacity', d => terms.has(d.Transliteration) ? 1 : 0.08);
+        }
+    }, [fadeDots, activeTerms]);
 
     return (
         <div className="viz-container">

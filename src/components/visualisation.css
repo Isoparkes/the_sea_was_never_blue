@@ -25,8 +25,7 @@ body {
 
 @font-face {
     font-family: 'Louize Display';
-    /* The URL starts from the public folder implicitly */
-    src: url('/fonts/LouizeDisplay.ttf') format('truetype'); 
+    src: url('/fonts/LouizeDisplay.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,56 +37,44 @@ body {
 }
 
 .App {
-    display: flex; /* Enables Flexbox layout */
-    flex-direction: column; /* Stacks elements (Title on top of Chart) */
-    align-items: center; /* Centers items Horizontally */
-    justify-content: center; /* Centers items Vertically */
-    min-height: 100vh; /* IMPORTANT: Forces the container to be at least as tall as the screen */
-    text-align: center; /* Centers text inside the text elements themselves; */ 
+    display: block;
+    text-align: center;
+    width: 100%;
 }
 
 .body-text {
     text-align: left;
-    width: 94%;
-    margin: 30px auto 30px auto; 
+    width: 82%;
+    margin: 16px auto 16px auto;
     line-height: 1.6;
-    padding: 0 30px; /* Prevents text hitting edge on mobile phones */
-}
-
-.prism-container {
-    position: absolute;
-    background-color: #e6f5f9;
-    top: -110px;
-    right: 340px;
-    width: 0px;
-    height: 0px;
-    z-index: 0;
-    pointer-events: auto;
+    padding: 0 30px;
 }
 
 .html-tooltip {
     position: absolute;
     width: auto;
-    min-width: 300px;
+    min-width: 290px;
     max-width: 320px;
     height: auto;
     padding: 14px;
-    
     text-align: left;
     background: white;
     border: 1px solid #000000;
     border-radius: 4px;
-    /*  box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
-    
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
     z-index: 100;
-    
-    /* Font styling */
     font-family: 'Martian Mono', monospace;
     font-size: 12px;
     line-height: 1.5;
+}
+
+.intro-section {
+    max-width: 900px;
+    margin: 3vh auto 1vh auto;
+    padding: 0 24px;
+    text-align: center;
 }
 
 .scrolly-container {
@@ -102,24 +89,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 90px;
     z-index: 0;
 }
 
 .scrolly-scroll {
     position: relative;
     z-index: 1;
-    margin-top: -100vh; /* Pulls text up to overlap the sticky graph */
-    pointer-events: none; /* Allows hovering on graph dots behind the text layer */
+    margin-top: -100vh;
+    pointer-events: none;
+}
+
+/* Full-height wrapper: centres the card vertically within the viewport */
+.step-full-height {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .step-card {
     position: relative;
-    max-width: 900px;
-    padding: '25px';
-    margin: 0 auto 100vh auto; /* Spacing between text blocks */
-    pointer-events: auto; /* Re-enables text selection/interaction */
+    max-width: 700px;
+    width: 90%;
+    padding: 28px 32px;
+    margin: 0 auto;
+    pointer-events: auto;
 }
 
-.step-ghost {
-    height: 100vh; /* Invisible spacer for the animation trigger */
+.below-graphic-section {
+    max-width: 900px;
+    margin: 60px auto 80px auto;
+    padding: 0 24px;
+}
+
+.methodology-section {
+    max-width: 700px;
+    margin: 140px auto 80px auto;
+    padding: 0 24px;
+}
+
+/* Diamond highlight flashes constantly and quickly */
+@keyframes eyeshine-flash {
+    0%, 100% { opacity: 0; }
+    50%       { opacity: 1; }
+}
+
+.porphureos-eyeshine {
+    animation: eyeshine-flash 1s ease-in-out infinite;
+    opacity: 0;
+}
+
+.sea-frequency-polarchart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto -60px auto;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: visible;
 }

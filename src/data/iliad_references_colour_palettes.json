@@ -1,0 +1,475 @@
+{
+    "description": "Frequency distribution of all Greek colour terms across all unique references in the Iliad.",
+    "master_colour_list": [
+        "αἴθων",
+        "γλαυκός",
+        "κυάνεος",
+        "λευκός",
+        "μέλας",
+        "ξανθός",
+        "οἶνοψ",
+        "πολιός",
+        "πορφυρεός",
+        "φοῖνιξ",
+        "χλωρός",
+        "ἀργός",
+        "ἐρυθρός",
+        "ῥοδοδάκτυλος"
+    ],
+    "data": [
+        {
+            "reference": "Iliad (books 1 to 24)",
+            "total_color_references": 345,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 111
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 60
+                },
+                {
+                    "term_category": "γλαυκός",
+                    "frequency": 37
+                },
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 37
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 28
+                },
+                {
+                    "term_category": "ξανθός",
+                    "frequency": 23
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 16
+                },
+                {
+                    "term_category": "οἶνοψ",
+                    "frequency": 8
+                },
+                {
+                    "term_category": "πολιός",
+                    "frequency": 8
+                },
+                {
+                    "term_category": "χλωρός",
+                    "frequency": 6
+                },
+                {
+                    "term_category": "ῥοδοδάκτυλος",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "ἀργός",
+                    "frequency": 3
+                },
+                {
+                    "term_category": "ἐρυθρός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "φοῖνιξ",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Sea",
+            "total_color_references": 12,
+            "colour_frequencies": [
+                {
+                    "term_category": "οἶνοψ",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 3
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "γλαυκός",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "πολιός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Gods",
+            "total_color_references": 67,
+            "colour_frequencies": [
+                {
+                    "term_category": "γλαυκός",
+                    "frequency": 36
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 24
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "ξανθός",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Sky & Light",
+            "total_color_references": 6,
+            "colour_frequencies": [
+                {
+                    "term_category": "ῥοδοδάκτυλος",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Atmosphere",
+            "total_color_references": 17,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 12
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 4
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Human Condition",
+            "total_color_references": 15,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 8
+                },
+                {
+                    "term_category": "χλωρός",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Body",
+            "total_color_references": 14,
+            "colour_frequencies": [
+                {
+                    "term_category": "λευκός",
+                    "frequency": 13
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Blood",
+            "total_color_references": 12,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 11
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Hair",
+            "total_color_references": 28,
+            "colour_frequencies": [
+                {
+                    "term_category": "ξανθός",
+                    "frequency": 20
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 4
+                },
+                {
+                    "term_category": "πολιός",
+                    "frequency": 4
+                }
+            ]
+        },
+        {
+            "reference": "Mortality",
+            "total_color_references": 17,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 14
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 3
+                }
+            ]
+        },
+        {
+            "reference": "Wine",
+            "total_color_references": 13,
+            "colour_frequencies": [
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 12
+                },
+                {
+                    "term_category": "οἶνοψ",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Water",
+            "total_color_references": 9,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 7
+                },
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Land",
+            "total_color_references": 14,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 7
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 6
+                },
+                {
+                    "term_category": "οἶνοψ",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Food Staples",
+            "total_color_references": 10,
+            "colour_frequencies": [
+                {
+                    "term_category": "λευκός",
+                    "frequency": 7
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "χλωρός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Divine Sustenance",
+            "total_color_references": 1,
+            "colour_frequencies": [
+                {
+                    "term_category": "ἐρυθρός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Horses",
+            "total_color_references": 7,
+            "colour_frequencies": [
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "ξανθός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "φοῖνιξ",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Livestock",
+            "total_color_references": 6,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "οἶνοψ",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "ἀργός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Predators & Scavengers",
+            "total_color_references": 11,
+            "colour_frequencies": [
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 5
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "ἀργός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "πολιός",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Ships",
+            "total_color_references": 46,
+            "colour_frequencies": [
+                {
+                    "term_category": "μέλας",
+                    "frequency": 39
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 6
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Metalwork & Armour",
+            "total_color_references": 30,
+            "colour_frequencies": [
+                {
+                    "term_category": "αἴθων",
+                    "frequency": 17
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 4
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 3
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 3
+                },
+                {
+                    "term_category": "πολιός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "ἐρυθρός",
+                    "frequency": 1
+                }
+            ]
+        },
+        {
+            "reference": "Textiles",
+            "total_color_references": 10,
+            "colour_frequencies": [
+                {
+                    "term_category": "πορφυρεός",
+                    "frequency": 6
+                },
+                {
+                    "term_category": "λευκός",
+                    "frequency": 2
+                },
+                {
+                    "term_category": "μέλας",
+                    "frequency": 1
+                },
+                {
+                    "term_category": "κυάνεος",
+                    "frequency": 1
+                }
+            ]
+        }
+    ]
+}
