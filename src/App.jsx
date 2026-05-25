@@ -226,7 +226,7 @@ function App() {
             The final counts for each term were then compared against figures in the academic literature to verify the dataset was as accurate as possible.
             <br />
             <br />
-            Each of the 16 colour terms was then manually scored from 0 to 10 across three dimensions: luminosity (or brightness), shimmer and movement. 
+            Each of the 16 colour terms were then manually scored from 0 to 10 across three dimensions: luminosity (or brightness), shimmer and movement. 
             The three-dimensional framework draws on Grand-Clément (2004) and Durão (2022), who argue ancient Greek colour terms prioritise luminosity, 
             <em>chatoiement</em> (iridescent surface shimmer), and movement over the hue-based categories of modern colour language. A composite "gleam score” 
             was calculated by averaging the shimmer and movement scores. The scoring went through several iterations and manual spot-checks 
