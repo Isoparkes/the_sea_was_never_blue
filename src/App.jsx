@@ -96,8 +96,8 @@ function App() {
           Outside of the fundamental dimensions of light and dark, <span style={{ color: '#B8302C' }}><strong><em>erythros</em></strong></span> was the only colour term Homer reserved
           for a single hue. Yet true red is almost entirely missing from the poem; even blood is consistently described
           as <span style={{ color: '#1A1A1A' }}><strong><em>melas</em></strong></span>. In fact, <span style={{ color: '#B8302C' }}><strong><em>erythros</em></strong></span> appears just twice in the entire epic. The first occurs in Book 9 when Achilles
-          speaks of "red bronze" while listing the treasures he will renounce by walking away from battle. The second is in Book 19,
-          when the goddess Thetis preserves Patroclus' body with "ambrosia and red nectar," the drink of the gods. The dark colour
+          speaks of 'red bronze' while listing the treasures he will renounce by walking away from battle. The second is in Book 19,
+          when the goddess Thetis preserves Patroclus' body with ambrosia and 'red nectar', the drink of the gods. The dark colour
           terms outnumbered light colour terms at a ratio of nearly 2:1. The world of the <em>Iliad</em> is significantly darker than it is bright.
         </p>
 
@@ -185,7 +185,7 @@ function App() {
         <p className="body-text" style={{ fontFamily: 'Louize Display', fontSize: '18px' }}>
           By mapping every colour term and its context across Homeric literature, it becomes clear that the ancient 
           Greeks experienced colours in degrees of lightness and darkness, inseparable from motion and shimmer. It 
-          is not that the Greeks' were unable to perceive some colours. Understanding ancient colour perception 
+          is not that the Greeks were unable to perceive some colours. Understanding ancient colour perception 
           requires stripping away our own modern concepts, from Isaac Newton's prism optics to industrial textile 
           dyes and standard colour wheels, which define colour by it's position on a hue spectrum. Rather than 
           categorisation by hue, Greek colour terms prioritised luminosity and the play of light across surfaces, 
@@ -204,8 +204,8 @@ function App() {
             The ancient Greek text of the <em>Iliad</em> was sourced from the <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0133" target="_blank" rel="noopener noreferrer">Perseus Digital Library</a>. All 24 books were parsed 
             using a Python script, stripping diacritics and normalising Unicode so that each search could catch all 
             the forms a word takes across the poem. Ancient Greek is a highly inflected language, meaning that a single word 
-            changes its ending depending on its grammatical role in a sentence. For example, a colour term like μέλας (melas, black) c
-            an appear as μελαίνης, μέλαν, μέλανος, and other variants depending on grammatical case, number, and gender. 
+            changes its ending depending on its grammatical role in a sentence. For example, a colour term like μέλας (melas, black) 
+            can appear as μελαίνης, μέλαν, μέλανος, and other variants depending on grammatical case, number, and gender. 
             Searching on word roots rather than exact spellings was the only way to count all instances colour terms were used, 
             though it also meant counting instances where a colour root was being used as something else entirely, e.g. ξανθός 
             (xanthos) is the word for blond or golden-yellow, but Xanthos is also the name of one of Achilles' immortal horses.
@@ -228,7 +228,7 @@ function App() {
             <br />
             Each of the 16 colour terms were then manually scored from 0 to 10 across three dimensions: luminosity (or brightness), shimmer and movement. 
             The three-dimensional framework draws on Grand-Clément (2004) and Durão (2022), who argue ancient Greek colour terms prioritise luminosity, 
-            <em>chatoiement</em> (iridescent surface shimmer), and movement over the hue-based categories of modern colour language. A composite "gleam score” 
+            <em> chatoiement</em> (iridescent surface shimmer) and movement over the hue-based categories of modern colour language. A composite 'gleam score' 
             was calculated by averaging the shimmer and movement scores. The scoring went through several iterations and manual spot-checks 
             before settling on final values.
             <br />
